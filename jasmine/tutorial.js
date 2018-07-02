@@ -425,7 +425,6 @@ describe("Matching with finesse", function ()
 	describe("jasmine.arrayContaining", function ()
 	{
 		var foo;
-
 		beforeEach(function ()
 		{
 			foo = [1, 2, 3, 4];

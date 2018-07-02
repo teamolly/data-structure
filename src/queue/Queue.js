@@ -1,4 +1,4 @@
-class Queue {
+export default class Queue {
 	constructor()
 	{
 		this.list = [];
@@ -33,7 +33,7 @@ class Queue {
 
 	get isEmpty()
 	{
-		return this.list.length;
+		return !!this.list.length;
 	}
 
 	clear()

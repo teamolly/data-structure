@@ -33,7 +33,7 @@ export default class Stack {
 
 	get isEmpty()
 	{
-		return this.list.length;
+		return !!this.list.length;
 	}
 
 	clear()

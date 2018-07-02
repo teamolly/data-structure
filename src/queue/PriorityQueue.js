@@ -1,4 +1,5 @@
-class PriorityQueue {
+import util from "./../util/util";
+export default class PriorityQueue {
 	constructor()
 	{
 		this.list = [{priority: -1}];
@@ -40,7 +41,7 @@ class PriorityQueue {
 
 	get isEmpty()
 	{
-		return this.list.length > 1;
+		return this.list.length <= 1;
 	}
 
 	clear()
@@ -51,9 +52,14 @@ class PriorityQueue {
 
 function createData($Obj)
 {
+	if (!(util.typeOf($Obj) === "object"))
+	{
+		$Obj = {data: $Obj}
+	}
 	var d = {};
-	d.name = "";
+	d.id = "";
 	d.priority = 0;
+	d.data = {};
 	d.update = updateData.bind(d);
 	d.update($Obj);
 	return d;
@@ -61,8 +67,9 @@ function createData($Obj)
 
 function updateData($Obj)
 {
-	$Obj.hasOwnProperty("name") && (this.name = $Obj.name);
+	$Obj.hasOwnProperty("id") && (this.id = $Obj.id);
 	$Obj.hasOwnProperty("priority") && (this.priority = $Obj.priority);
+	$Obj.hasOwnProperty("data") && (this.data = $Obj.data);
 }
 
 
